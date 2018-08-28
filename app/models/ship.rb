@@ -1,21 +1,16 @@
 class Ship
   attr_accessor :name, :type, :booty
-  
-  all = []
-  
-  def initialize(attrib_hash)
+   @@all = []
+   def initialize(attrib_hash)
     @name = attrib_hash[:name]
     @type = attrib_hash[:type]
     @booty = attrib_hash[:booty]
-    @@all << self 
+    @@all << self
   end
-  
-  def self.all
+   def self.all
     @@all
   end
-  
-  def self.clear
+   def self.clear
     @@all = []
   end
-  
 end
