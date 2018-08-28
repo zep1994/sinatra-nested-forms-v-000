@@ -1,1 +1,24 @@
-<h1>Make your form here</h1>
+<h1>Pirate Inpute Form</h1>
+
+<form action="/pirates" method="post">
+  <h1>Pirate</h1>
+  <label for="pirate_name">Name:</label>
+    <input type="text" name="pirate[name]" id="pirate_name">
+  <label for="pirate_weight">Weight:</label>
+    <input type="text" name="pirate[weight]" id="pirate_weight">
+  <label for="pirate_height">Height:</label>
+    <input type="text" name="pirate[height]" id="pirate_height">
+  
+  <% for i in 1..2%>
+    <h1>Pirate's Ship <%= i %></h1>
+    <label for=<%= "ship_name_#{i}"%>>Name:</label>
+      <input type="text" name="pirate[ships][][name]" id=<%= "ship_name_#{i}"%>>
+      <label for=<%= "ship_weight_#{i}"%>>Weight:</label>
+        <input type="text" name="pirate[ships][][type]" id=<%= "ship_type_#{i}"%>>
+      <label for=<%= "ship_height_#{i}"%>>Height:</label>
+        <input type="text" name="pirate[ships][][booty]" id=<%= "ship_booty_#{i}"%>>
+        
+    <% end %>
+    
+    <input type="submit" id="submit">
+</form>
